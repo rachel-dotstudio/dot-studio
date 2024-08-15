@@ -7,8 +7,7 @@ const Proposal: React.FC = () => {
     <div id="proposal" className={proposalStyles.proposal}>
       <header className={`main-header ${proposalStyles.mainHeader}`}>
         <div className={`main-header__container container ${proposalStyles.container}`}>
-        <h1 className={proposalStyles.headerTitle}>Unlocking Potential for Senseye</h1>
-          <p>A tailored</p>
+        <h1 className={proposalStyles.headerTitle}>Are you ready to take <span className={`companyname ${proposalStyles.companyname}`}> Senseye</span> to the next level?</h1>
         </div>
       </header>
       <main className={proposalStyles.proposal}>

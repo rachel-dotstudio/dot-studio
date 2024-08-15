@@ -1,0 +1,62 @@
+// Variables
+@import "./variables";
+
+.button {
+    padding: 1em 2em;
+    color: $white;
+    text-decoration: none;
+    background-color: $btn-color;
+    border-radius: $radius;
+  
+    &:hover {
+      background-color: lighten($btn-color, 3%);
+    }
+  
+    &--primary {
+      background-color: $purple;
+  
+      &:hover {
+        background-color: lighten($purple, 3%);
+      }
+   }
+}
+  
+  .buttonGroup {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: $spacing;
+    width: fit-content;
+  }
+
+  .primary {
+    @extend .button;
+    @extend .button--primary;
+  }
+
+  //consultation button
+
+  .ConsultationButton {
+    padding: 1em 2em;
+    color: $white;
+    text-decoration: none;
+    background-color: $purple;
+    border: 1px solid $purple;
+    border-radius: $radius;
+  
+    &:hover {
+      background-color: lighten($pink, 3%);
+    }
+  }
+
+  .ContactUsButton {
+    padding: 1em 2em;
+    color: $white;
+    text-decoration: none;
+    background-color: $btn-color;
+    border: 1px solid $btn-color;
+    border-radius: $radius;
+  
+    &:hover {
+      background-color: lighten($purple, 3%);
+    }
+  }

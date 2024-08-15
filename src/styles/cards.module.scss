@@ -1,0 +1,16 @@
+// Variables
+@import "./variables";
+
+.card {
+    background-color: $white;
+    border-radius: $radius;
+    padding: $double-spacing;
+  }
+
+  // Specific styles for homepage card
+
+    .homepage-card {
+        background-color: $light-bg-color;
+        border: 1px solid $black-lighter;
+        padding: $spacing;
+    }

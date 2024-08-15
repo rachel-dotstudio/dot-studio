@@ -1,0 +1,47 @@
+// Variables
+@import "./variables";
+
+.tag {
+    text-transform: uppercase;
+    font-size: $small-font-size;
+    font-weight: 700;
+    background-color: $white;
+    border: 1px solid $black;
+    border-radius: $radius;
+    padding: 0 .2em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: calc($spacing/2);
+  
+    &--pink {
+      background-color: $pink;
+      color: $white;
+      border-color: $pink;
+    }
+  
+    &--purple {
+      background-color: $purple;
+      color: $white;
+      border-color: $purple;
+    }
+  
+    &--lime {
+      background-color: $lime;
+      color: $black;
+      border-color: $lime;
+    }
+  
+    &--orange {
+      background-color: $orange;
+      color: $white;
+      border-color: $orange;
+    }
+  
+    &--black {
+      background-color: $black;
+      color: $white;
+      border-color: $black;
+    }
+  }
+  

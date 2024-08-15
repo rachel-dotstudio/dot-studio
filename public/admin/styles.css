@@ -1,0 +1,24 @@
+/* styles.css */
+/* Basic custom styles for the Decap CMS admin interface */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.cms-toolbar {
+    background-color: #333;
+    color: #fff;
+}
+
+.cms-toolbar button {
+    background-color: #555;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.cms-toolbar button:hover {
+    background-color: #777;
+}

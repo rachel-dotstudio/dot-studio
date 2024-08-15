@@ -19,7 +19,7 @@ const MainNav: React.FC = () => {
                 <Link href="/blog">Blog</Link>
               </li>
               <li>
-                <Link href="/proposal">Proposal</Link>
+                <Link href="/proposals">Proposal</Link>
               </li>
               <li>
                 <Link href="/admin">CMS Admin</Link>

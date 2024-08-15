@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const Logos: React.FC = () => {
     return (
         <div className="main-header__brands">

@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from "next/link";
-import proposalStyles from '../../styles/proposal.module.scss';  
+import proposalStyles from '@/styles/proposal.module.scss';
 
 const Proposal: React.FC = () => {
   return (
@@ -8,7 +8,7 @@ const Proposal: React.FC = () => {
       <header className={`main-header ${proposalStyles.mainHeader}`}>
         <div className={`main-header__container container ${proposalStyles.container}`}>
         <h1 className={proposalStyles.headerTitle}>Unlocking Potential for Senseye</h1>
-          <p>A tailored strategy</p>
+          <p>A tailored</p>
         </div>
       </header>
       <main className={proposalStyles.proposal}>

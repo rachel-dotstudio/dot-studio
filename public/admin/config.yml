@@ -1,0 +1,28 @@
+backend:
+  name: git-gateway
+  branch: main # or your preferred branch
+
+media_folder: "public/images/uploads" # Folder where uploaded media files will be stored
+public_folder: "/images/uploads" # Path to access uploaded files
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    folder: "content/pages"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    format: "json"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }

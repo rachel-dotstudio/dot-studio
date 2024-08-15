@@ -1,4 +1,14 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+    async redirects() {
+      return [
+        {
+          source: '/admin',
+          destination: '/admin/index.html',
+          permanent: true,
+        },
+      ];
+    },
+  };
+  
+  export default nextConfig;

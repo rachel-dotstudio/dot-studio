@@ -1,0 +1,31 @@
+// Variables
+@import "./variables";
+
+.mainHeader {
+   padding: 0; 
+
+   .header-title { 
+      margin: 0;
+      padding: 0;
+      
+      &::after {
+         content: 'test';
+         position: relative;
+         width: 10px;
+         height: 10px;
+         background-color: $pink;
+         margin-top: 10px;
+         left: 10px;
+         font-size: 16px;
+      }
+   }
+ }
+
+ .proposal_container {
+   padding: 20px;
+ }
+
+ .card {
+   border: 1px solid #ccc;
+   padding: 10px;
+ }

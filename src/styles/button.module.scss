@@ -21,42 +21,42 @@
    }
 }
   
-  .buttonGroup {
-    display: grid;
-    grid-auto-flow: column;
-    grid-gap: $spacing;
-    width: fit-content;
-  }
+.buttonGroup {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: $spacing;
+  width: fit-content;
+}
 
-  .primary {
-    @extend .button;
-    @extend .button--primary;
-  }
+.primary {
+  @extend .button;
+  @extend .button--primary;
+}
 
-  //consultation button
+//consultation button
+.ConsultationButton {
+  padding: 1em 2em;
+  color: $white;
+  text-decoration: none;
+  background-color: $purple;
+  border: 1px solid $purple;
+  border-radius: $radius;
 
-  .ConsultationButton {
-    padding: 1em 2em;
-    color: $white;
-    text-decoration: none;
-    background-color: $purple;
-    border: 1px solid $purple;
-    border-radius: $radius;
-  
-    &:hover {
-      background-color: lighten($pink, 3%);
-    }
+  &:hover {
+    background-color: lighten($pink, 3%);
   }
+}
 
-  .ContactUsButton {
-    padding: 1em 2em;
-    color: $white;
-    text-decoration: none;
-    background-color: $btn-color;
-    border: 1px solid $btn-color;
-    border-radius: $radius;
-  
-    &:hover {
-      background-color: lighten($purple, 3%);
-    }
+//contractus button
+.ContactUsButton {
+  padding: 1em 2em;
+  color: $white;
+  text-decoration: none;
+  background-color: $btn-color;
+  border: 1px solid $btn-color;
+  border-radius: $radius;
+
+  &:hover {
+    background-color: lighten($purple, 3%);
   }
+}

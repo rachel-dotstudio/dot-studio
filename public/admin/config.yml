@@ -1,25 +1,18 @@
-# config.yml
-
 backend:
   name: git-gateway
-  branch: main # Branch to update (optional; defaults to master)
+  branch: main
+  local_backend: true
 
-media_folder: 'assets/uploads'
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
 
 collections:
-  - name: 'blog'
-    label: 'Blog'
-    folder: '_posts/'
-    fields:
-      - { name: Title }
-
-  - name: "proposals"
+  - name: "proposal"
     label: "Proposals"
-    folder: "content/proposals"
+    folder: "content/proposal"
     create: true
-    slug: "{{slug}}"
     fields:
-      - { label: "Company Name", name: "company_name", widget: "string" }
-      - { label: "Slug", name: "slug", widget: "string" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Logo", name: "logo", widget: "image" }
+      - {label: "Company Name", name: "company_name", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Logo", name: "logo", widget: "image"}

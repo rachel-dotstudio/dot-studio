@@ -1,4 +1,5 @@
 // ** NOTE: This page is app/page.tsx **
+"use client";
 
 import React, { useEffect } from 'react';
 import Services from '@/components/services';

@@ -1,35 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noindex" />
-    <title>Content Manager</title>
-    <script>
-        if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", (user) => {
-                if (!user) {
-                    window.netlifyIdentity.on("login", () => {
-                        document.location.href = "/admin/";
-                    });
-                }
-            });
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Manager</title>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
         }
-    </script>
+      });
+    }
+  </script>
 </head>
 <body>
-    <!-- Load DecapCMS -->
-    <script src="https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0"></script>
-    
-    <script>
-        // Initialize DecapCMS
-        if (typeof DecapCMS !== 'undefined') {
-            DecapCMS.init();
-        } else {
-            console.error("DecapCMS is not defined. Check if the script is loaded correctly.");
-        }
-    </script>
-    
-    <p>This is working correctly</p>
+  <script src="https://unpkg.com/decap-cms@2.10.0/dist/decap-cms.js"></script>
+  <script>
+    window.CMS.init();
+  </script>
 </body>
 </html>

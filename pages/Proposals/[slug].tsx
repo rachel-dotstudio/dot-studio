@@ -1,5 +1,5 @@
 import matter from 'gray-matter';
-import ProposalLayout from '../proposals/layout-proposal';
+import ProposalLayout from '../../pages/proposals/layout-proposal';
 import Image from 'next/image';
 import styles from "../../src/styles/proposal.module.scss";
 

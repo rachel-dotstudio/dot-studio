@@ -12,28 +12,26 @@ const MainNav: React.FC = () => {
             <small>Your web transformation partner</small>
           </Link>
         </li>
-        <div className="test-nav">
+        <li className="test-nav">
           <p>Test Pages</p>
           <ul>
-              <li>
-                <Link href="/blog">Blog</Link>
-              </li>
-              <li>
-                <Link href="/proposals">Proposal</Link>
-              </li>
-              <li>
-                <Link href="/admin">CMS Admin</Link>
-              </li>
+            <li>
+              <Link href="/blog">Blog</Link>
+            </li>
+            <li>
+              <Link href="/Proposals">Proposal</Link>
+            </li>
+            <li>
+              <Link href="/admin">CMS Admin</Link>
+            </li>
           </ul>
-        </div>
-        <div>
-          <li>
-            <Link href="/">Book a consultation</Link>
-          </li>
-          <li>
-            <Link href="/">Contact us</Link>
-          </li>
-        </div>
+        </li>
+        <li>
+          <Link href="/">Book a consultation</Link>
+        </li>
+        <li>
+          <Link href="/">Contact us</Link>
+        </li>
       </ul>
     </nav>
   );

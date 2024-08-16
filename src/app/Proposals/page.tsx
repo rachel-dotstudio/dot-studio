@@ -1,51 +1,27 @@
+import Link from 'next/link';
+import proposalStyles from '../../styles/proposal.module.scss';
 import fs from 'fs';
 import path from 'path';
-import matter from 'gray-matter';
-import Link from 'next/link';
-import proposalStyles from './page.module.scss';
 
-export async function getStaticProps() {
-  const proposalsDirectory = path.join(process.cwd(), 'content/proposals');
+const getProposals = () => {
+  const proposalsDirectory = path.join(process.cwd(), 'Contents/Proposals');
   const filenames = fs.readdirSync(proposalsDirectory);
+  return filenames;
+};
 
-  const proposals = filenames.map((filename) => {
-    const filePath = path.join(proposalsDirectory, filename);
-    const fileContents = fs.readFileSync(filePath, 'utf8');
-    const { data, content } = matter(fileContents);
+const ProposalsPage = () => {
+  const filenames = getProposals();
 
-    return {
-      slug: filename.replace('.md', ''),
-      ...data,
-      content,
-    };
-  });
-
-  return {
-    props: {
-      proposals,
-    },
-  };
-}
-
-const ProposalsPage: React.FC<{ proposals: any[] }> = ({ proposals }) => {
   return (
-    <div id="proposals" className={proposalStyles.proposal}>
-      <header className={`${proposalStyles.mainHeader}`}>
-        <div className={`${proposalStyles.container}`}>
-          <h1 className={proposalStyles.headerTitle}>Are you ready to take the next step?</h1>
+    <div className={proposalStyles.container}>
+      {/* Render proposals */}
+      {filenames.map((filename) => (
+        <div key={filename}>
+          <Link href={`/proposals/${filename.replace(/\.md$/, '')}`}>
+            {filename}
+          </Link>
         </div>
-      </header>
-      <main className={proposalStyles.proposal_container}>
-        <ul className={proposalStyles.list}>
-          {proposals.map((proposal) => (
-            <li key={proposal.slug} className={proposalStyles.card}>
-              <header>{proposal.title}</header>
-              <p>{proposal.content.substring(0, 100)}...</p>
-              <Link href={`/proposals/${proposal.slug}`}>Read more</Link>
-            </li>
-          ))}
-        </ul>
-      </main>
+      ))}
     </div>
   );
 };

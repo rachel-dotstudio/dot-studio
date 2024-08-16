@@ -1,23 +1,27 @@
-import fs from 'fs';
-import path from 'path';
 import matter from 'gray-matter';
-import ProposalLayout from './layout-proposal';  // Import the layout
+import ProposalLayout from '../../../src/app/Proposals/layout-proposal'; 
 import Image from 'next/image';
 
 export async function getStaticPaths() {
+  const fs = require('fs');
+  const pathModule = require('path');
+  
   const files = fs.readdirSync('Contents/Proposals');
-  const paths = files.map((filename) => ({
+  const paths = files.map((filename: string) => ({
     params: { slug: filename.replace('.md', '') },
   }));
 
   return {
     paths,
-    fallback: false, // can also be true or 'blocking'
+    fallback: false, // 404 page for everything else
   };
 }
 
 export async function getStaticProps({ params: { slug } }: { params: { slug: string } }) {
-  const markdownWithMeta = fs.readFileSync(path.join('Contents/Proposals', slug + '.md'), 'utf-8');
+  const fs = require('fs');
+  const pathModule = require('path');
+  
+  const markdownWithMeta = fs.readFileSync(pathModule.join('Contents/Proposals', slug + '.md'), 'utf-8');
   const { data: proposal } = matter(markdownWithMeta);
 
   return {
@@ -33,7 +37,7 @@ const ProposalPage: React.FC<{ proposal: { companyName: string; description: str
       <div>
         <h1>{proposal.companyName}</h1>
         <p>{proposal.description}</p>
-        <Image src={`/images/${proposal.logo}`} alt={`${proposal.companyName} logo`} width={200} height={200} />
+        {proposal.logo && <Image src={proposal.logo} alt={proposal.companyName} width={100} height={100} />}
       </div>
     </ProposalLayout>
   );

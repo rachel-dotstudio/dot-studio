@@ -93,7 +93,7 @@ const ProposalsPage: React.FC<ProposalsPageProps> = ({ proposals }) => {
       <ul>
         {proposals.map((proposal) => (
           <li key={proposal.slug}>
-            <Link href={`/proposals/${proposal.slug}`} legacyBehavior>
+            <Link href={`/Proposals/${proposal.slug}`} legacyBehavior>
               <a>
                 <p>{proposal.companyName}</p>
               </a>

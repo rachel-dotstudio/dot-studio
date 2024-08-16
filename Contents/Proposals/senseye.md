@@ -7,5 +7,5 @@ description: |-
   Next Paragraph is here
 
   etc etc
-logo: /images/vercel.svg
+logo: /images/images.png
 ---

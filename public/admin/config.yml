@@ -16,3 +16,23 @@ collections:
       - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Logo", name: "logo", widget: "image" }
+      - { label: "uxdescriptionsubtitle:", name: "uxdescriptionsubtitle:o", widget: "text" }
+      - { label: "uxdescription", name: "uxdescription", widget: "text" }
+      - { label: "pddescriptionsubtitle", name: "pddescriptionsubtitle", widget: "text" }
+      - { label: "pddescription", name: "pddescription", widget: "text" }
+      - { label: "seodescriptionsubtitle", name: "seodescriptionsubtitle", widget: "text" }
+      - { label: "seodescription", name: "seodescription", widget: "text" }
+      - { label: "seodescriptionsubtitle2", name: "seodescriptionsubtitle2", widget: "text" }
+      - { label: "seodescription2", name: "seodescription2", widget: "text" }
+      - { label: "visualdesignsubtitle", name: "visualdesignsubtitle", widget: "text" }
+      - { label: "visualdesign", name: "visualdesign", widget: "text" }
+      - { label: "visualdesignsubtitle2", name: "visualdesignsubtitle", widget: "text" }
+      - { label: "visualdesign2", name: "visualdesign2", widget: "text" }
+      - { label: "contentstrategysubtitle", name: "contentstrategysubtitle", widget: "text" }
+      - { label: "contentstrategy", name: "contentstrategy", widget: "text" }
+      - { label: "contentstrategysubtitle2", name: "contentstrategysubtitle2", widget: "text" }
+      - { label: "contentstrategy2", name: "contentstrategy2", widget: "text" }
+      - { label: "accessibilitysubtitle", name: "accessibilitysubtitle", widget: "text" }
+      - { label: "accessibility", name: "accessibility", widget: "text" }
+      - { label: "analyticssubtitle", name: "analyticssubtitle", widget: "text" }
+      - { label: "analytics", name: "analytics", widget: "text" }

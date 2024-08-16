@@ -3,9 +3,9 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import Link from 'next/link';
-import proposalStyles from '../../src/styles/global.scss';
 import Ticker from '@/components/ticker';
 import Nav from '@/components/nav';
+import '../../src/styles/global.scss';
 import Footer from '@/components/footer';
 
 interface Proposal {
@@ -88,7 +88,7 @@ const ProposalsPage: React.FC<ProposalsPageProps> = ({ proposals }) => {
     <div>
       <Ticker />
       <Nav />
-      <div className={proposalStyles.container}>
+      <div>
       <p>List of Proposals</p>
       <ul>
         {proposals.map((proposal) => (

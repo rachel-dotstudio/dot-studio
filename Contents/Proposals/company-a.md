@@ -1,5 +1,5 @@
 ---
-title: Company A
+title: Senseye
 slug: company-a
 description: We are here to help you improve your platform
 logo: /images/logo.svg

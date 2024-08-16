@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "../../styles/global.scss";
+import styles from "../../src/styles/global.scss";
 import Footer from '@/components/footer';
 import Ticker from '@/components/ticker';
 import Nav from '@/components/nav';

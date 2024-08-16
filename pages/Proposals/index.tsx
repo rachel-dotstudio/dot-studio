@@ -3,22 +3,42 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import Link from 'next/link';
-import Header from '@/components/header';
+import proposalStyles from '../../src/styles/global.scss';
+import Ticker from '@/components/ticker';
+import Nav from '@/components/nav';
 import Footer from '@/components/footer';
 
-// Extend the Window interface
-declare global {
-  interface Window {
-    netlifyIdentity: any;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      [elemName: string]: any;
-    }
-  }
+interface Proposal {
+  slug: string;
+  companyName: string;
+  description: string;
+  logo: string;
+  uxdescriptionsubtitle: string;
+  uxdescription: string;
+  pddescriptionsubtitle: string;
+  pddescription: string;
+  seodescriptionsubtitle: string;
+  seodescription: string;
+  seodescriptionsubtitle2: string;
+  seodescription2: string;
+  visualdesignsubtitle: string;
+  visualdesign: string;
+  visualdesignsubtitle2: string;
+  visualdesign2: string;
+  contentstrategysubtitle: string;
+  contentstrategy: string;
+  contentstrategysubtitle2: string;
+  contentstrategy2: string;
+  accessibilitysubtitle: string;
+  accessibility: string;
+  analyticssubtitle: string;
+  analytics: string;
 }
 
-// Fetch the proposals data
+interface ProposalsPageProps {
+  proposals: Proposal[];
+}
+
 export async function getStaticProps() {
   const proposalsDirectory = path.join(process.cwd(), 'Contents/Proposals');
   const filenames = fs.readdirSync(proposalsDirectory);
@@ -30,7 +50,29 @@ export async function getStaticProps() {
 
     return {
       slug: filename.replace('.md', ''),
-      ...data,
+      companyName: data.companyName,
+      description: data.description,
+      logo: data.logo,
+      uxdescriptionsubtitle: data.uxdescriptionsubtitle,
+      uxdescription: data.uxdescription,
+      pddescriptionsubtitle: data.pddescriptionsubtitle,
+      pddescription: data.pddescription,
+      seodescriptionsubtitle: data.seodescriptionsubtitle,
+      seodescription: data.seodescription,
+      seodescriptionsubtitle2: data.seodescriptionsubtitle2,
+      seodescription2: data.seodescription2,
+      visualdesignsubtitle: data.visualdesignsubtitle,
+      visualdesign: data.visualdesign,
+      visualdesignsubtitle2: data.visualdesignsubtitle2,
+      visualdesign2: data.visualdesign2,
+      contentstrategysubtitle: data.contentstrategysubtitle,
+      contentstrategy: data.contentstrategy,
+      contentstrategysubtitle2: data.contentstrategysubtitle2,
+      contentstrategy2: data.contentstrategy2,
+      accessibilitysubtitle: data.accessibilitysubtitle,
+      accessibility: data.accessibility,
+      analyticssubtitle: data.analyticssubtitle,
+      analytics: data.analytics,
     };
   });
 
@@ -41,59 +83,31 @@ export async function getStaticProps() {
   };
 }
 
-interface ProposalProps {
-  proposals: {
-    slug: string;
-    title: string;
-    description: string;
-    logo: string;
-  }[];
-}
-
-export default function ProposalsPage({ proposals }: ProposalProps) {
-  useEffect(() => {
-    const identityScript = document.createElement('script');
-    identityScript.src = "https://identity.netlify.com/v1/netlify-identity-widget.js";
-    document.body.appendChild(identityScript);
-
-    identityScript.onload = () => {
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on('init', (user: any) => {
-          if (user) {
-            window.location.href = "/admin";
-          }
-        });
-
-        window.netlifyIdentity.on('login', () => {
-          window.location.href = "/admin";
-        });
-      }
-    };
-  }, []);
-
+const ProposalsPage: React.FC<ProposalsPageProps> = ({ proposals }) => {
   return (
-    <main>
-      <Header />
-      <h1>Proposals</h1>
+    <div>
+      <Ticker />
+      <Nav />
+      <div className={proposalStyles.container}>
+      <p>List of Proposals</p>
       <ul>
         {proposals.map((proposal) => (
           <li key={proposal.slug}>
-            <Link href={`/Proposals/${proposal.slug}`}>
-              <h2>{proposal.title}</h2>
+            <Link href={`/proposals/${proposal.slug}`} legacyBehavior>
+              <a>
+                <p>{proposal.companyName}</p>
+              </a>
             </Link>
-            <p>{proposal.description}</p>
-            <img
-              src={`/images/${proposal.logo}`}
-              alt={`${proposal.title} logo`}
-            />
           </li>
         ))}
       </ul>
-      <Footer />
-    </main>
-  );
-}
+    </div>
+    <Footer />
+    </div>
 
-function useEffect(arg0: () => void, arg1: never[]) {
-    throw new Error('Function not implemented.');
-}
+
+ 
+  );
+};
+
+export default ProposalsPage;

@@ -1,8 +1,7 @@
 import matter from 'gray-matter';
-import ProposalLayout from '../../../src/app/Proposals/layout-proposal'; 
+import ProposalLayout from '../../../pages/proposals/layout-proposal'; 
 import Image from 'next/image';
 import styles from "../../styles/proposal.module.scss";
-
 
 export async function getStaticPaths() {
   const fs = require('fs');

@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false, // 404 page for everything else
+    fallback: false, // show 404 page for everything else
   };
 }
 
